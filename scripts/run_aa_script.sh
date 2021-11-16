@@ -1,31 +1,34 @@
 #!/bin/bash
 
 
-tar -xf /home/genepattern/data_repo/$1.tar.gz
-cp $2 /home/genepattern/programs/mosek/8/licenses/
-cp $2 /home/genepattern/programs/mosek/
+tar -xf /genepatt/data_repo/$1.tar.gz --directory /genepatt
+cp $2 /genepatt/programs/mosek/8/licenses/
+cp $2 /genepatt/programs/mosek/
 
-MOSEKLM_LICENSE_FILE=/home/genepattern/programs/mosek/8/licenses
+MOSEKLM_LICENSE_FILE=/genepatt/programs/mosek/8/licenses
 export MOSEKLM_LICENSE_FILE
-AA_DATA_REPO=/home/genepattern/data_repo
+AA_DATA_REPO=/genepatt/data_repo
 export AA_DATA_REPO
 export DOWNSAMPLE
 DOWNSAMPLE = $7
 
 BAMFILE=$3
 bambase="$(basename -- $BAMFILE)"
+bampath="$(dirname -- $BAMFILE)"
 BEDFILE=$4
 bedbase="$(basename -- $BEDFILE)"
+bedpath="$(dirname -- $BEDFILE)"
 BAIFILE=$6
 baibase="$(basename -- $BAIFILE)"
+baipath="$(dirname -- $BAIFILE)"
 
-mv $3 /home/genepattern/input/
-mv $4 /home/genepattern/input/
-mv $6 /home/genepattern/input/
+#mv $3 /genepatt/input/
+#mv $4 /genepatt/input/
+#mv $6 /genepatt/input/
 
-bam="/home/genepattern/input/$bambase"
-bed="/home/genepattern/input/$bedbase"
-bai="/home/genepattern/input/$baibase"
+bam="$bampath/$bambase"
+bed="$bedpath/$bedbase"
+bai="$baipath/$baibase"
 
 
-python2 /home/genepattern/AA/AmpliconArchitect.py --bam $bam --bed $bed --out $5 --ref $1
+python2 /genepatt/AA/AmpliconArchitect.py --bam $bam --bed $bed --out $5 --ref /genepatt/${1}
