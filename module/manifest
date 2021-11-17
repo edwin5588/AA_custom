@@ -1,14 +1,14 @@
-#AmpliconArchitect
-#Tue Nov 16 11:47:44 PST 2021
+# AmpliconArchitect  urn:lsid:8080.gpserver.ip-172-31-26-71.ip-172-31-26-71.ec2.internal:genepatternmodules:503:4.0.1
+#Wed Nov 17 13:52:46 PST 2021
 JVMLevel=
 LSID=urn\:lsid\:8080.gpserver.ip-172-31-26-71.ip-172-31-26-71.ec2.internal\:genepatternmodules\:503\:4.0.1
 author=Edwin Huang
-commandLine=/home/genepattern/run_aa_script.sh <reference> <license> <bamfile> <bedfile> <output> <baifile> <seed>
+commandLine=/opt/genepatt/run_aa_script.sh <reference> <license> <bamfile> <bedfile> <output> <baifile> <seed>
 cpuType=any
-description=Cancer is marked by somatic (body) DNA lesions (wounds). Sometimes, they are small nucleotide changes, but focal amplifications of smaller regions are a signature of a large proportion of human cancers. Focal amplification in nearly half the samples across different cancer types can be explained by circular extrachromosomal DNA (*ecDNA) formation. Therefore we need to study the biological properties of ecDNA. AmpliconArchitect sourcecode is taken from https\://github.com/jluebeck/AmpliconArchitect, all credits go to Jluebeck's AmpliconArchitect repo. Currently running on Amplicon Architect Version 1.2\n\nContact\: Edwin Huang\nEmail\: edwin5588@gmail.com
+description=Cancer is marked by somatic (body) DNA lesions (wounds). Sometimes, they are small nucleotide changes, but focal amplifications of smaller regions are a signature of a large proportion of human cancers. Focal amplification in nearly half the samples across different cancer types can be explained by circular extrachromosomal DNA (*ecDNA) formation. Therefore we need to study the biological properties of ecDNA. AmpliconArchitect sourcecode is taken from https\://github.com/jluebeck/AmpliconArchitect, all credits go to Jluebeck's AmpliconArchitect repo. Currently running on Amplicon Architect Version 1.2\n\nContact\: Edwin Huang\nEmail\: edwin5588@gmail.com 
 documentationUrl=
 fileFormat=
-job.docker.image=liefeld/aa\:2
+job.docker.image=liefeld/aa\:3
 language=any
 name=AmpliconArchitect
 os=any
