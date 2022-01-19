@@ -9,8 +9,9 @@ MOSEKLM_LICENSE_FILE=/home/programs/mosek/8/licenses
 export MOSEKLM_LICENSE_FILE
 AA_DATA_REPO=/home/data_repo
 export AA_DATA_REPO
+DOWNSAMPLE=$7
 export DOWNSAMPLE
-DOWNSAMPLE = $7
+
 
 BAMFILE=$3
 bambase="$(basename -- $BAMFILE)"

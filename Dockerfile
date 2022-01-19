@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 # Build in non-interactive mode for online continuous building
 ARG DEBIAN_FRONTEND=noninteractive
 
-# Set the working directory to /app
+# Set the working directory to /am
 WORKDIR /home/
 
 #Copy AA and mosek to image
@@ -49,8 +49,9 @@ RUN mkdir -p /home/AA/
 RUN mkdir -p /home/data_repo/
 COPY src/* /home/AA/
 COPY lic/* /home/programs/mosek/8/licenses/
-COPY zip/* /home/data_repo/
+# COPY zip/* /home/data_repo/
 COPY scripts/* /home/
 # testing purposes only
 # COPY testdata/* /home/testdata/
+#COPY data_repo/ /home/data_repo/
 
