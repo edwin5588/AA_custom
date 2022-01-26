@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo "Running in $PWD">pwd.txt
 mkdir -p $PWD/genome/$1
 
 tar -xf /opt/genepatt/data_repo/$1.tar.gz --directory ${PWD}/genome/$1
@@ -29,8 +28,14 @@ bam="$bampath/$bambase"
 bed="$bedpath/$bedbase"
 bai="$baipath/$baibase"
 
+mkdir ./.data
+ln -s $BAMFILE ./.data/$bambase
+ln -s $BAIFILE ./.data/$baibase
 
-python2 /opt/genepatt/AA/AmpliconArchitect.py --bam $bam --bed $bed --out $5 --ref $PWD/genome/${1}
+# assumes that the bai is next to the bam
+python2 /opt/genepatt/AA/AmpliconArchitect.py --bam ./.data/$bambase  --bed $bed --out $5 --ref $PWD/genome/${1}
+
+# python2 /opt/genepatt/AA/AmpliconArchitect.py --bam $bam --bed $bed --out $5 --ref $PWD/genome/${1}
 
 # remove the genome so it does not show as an output
 rm -rf ./genome
